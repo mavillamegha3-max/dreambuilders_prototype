@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroJal | Smart Water Management</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <section id="loginPage" class="page login-page">
+
+        <div class="login-card">
+
+            <div class="brand-icon">🌱</div>
+
+            <h1>AgroJal</h1>
+
+            <p class="login-subtitle">
+                Smart Water Management System
+            </p>
+
+            <p class="login-description">
+                Smarter water control for better farming.
+                Monitor water usage and manage your irrigation
+                system through a simple digital dashboard.
+            </p>
+
+            <form id="loginForm">
+
+                <label for="farmerName">Farmer Name</label>
+
+                <input
+                    type="text"
+                    id="farmerName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    minlength="4"
+                    required
+                >
+
+                <button type="submit" class="primary-button">
+                    Continue to AgroJal →
+                </button>
+
+            </form>
+
+            <p class="demo-note">
+                Prototype demonstration login
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LANGUAGE SELECTION PAGE ================= -->
+
+    <section id="languagePage" class="page language-page hidden">
+
+        <div class="language-container">
+
+            <div class="language-brand">
+                <span class="language-logo">🌱</span>
+                <span>AgroJal</span>
+            </div>
+
+            <div class="language-heading">
+
+                <span class="eyebrow">PERSONALIZE YOUR EXPERIENCE</span>
+
+                <h1>Choose Your Language</h1>
+
+                <p>
+                    Select the language you are most comfortable with.
+                    AgroJal will use your selection for supported
+                    navigation labels and greetings.
+                </p>
+
+            </div>
+
+            <div class="language-grid">
+
+                <button class="language-card selected"
+                        data-language="en">
+
+                    <span class="language-symbol">A</span>
+
+                    <span class="language-name">English</span>
+
+                    <span class="language-native">
+                        English
+                    </span>
+
+                    <span class="language-check">✓</span>
+
+                </button>
+
+
+                <button class="language-card"
+                        data-language="te">
+
+                    <span class="language-symbol">అ</span>
+
+                    <span class="language-name">Telugu</span>
+
+                    <span class="language-native">
+                        తెలుగు
+                    </span>
+
+                    <span class="language-check">✓</span>
+
+                </button>
+
+
+                <button class="language-card"
+                        data-language="hi">
+
+                    <span class="language-symbol">अ</span>
+
+                    <span class="language-name">Hindi</span>
+
+                    <span class="language-native">
+                        हिन्दी
+                    </span>
+
+                    <span class="language-check">✓</span>
+
+                </button>
+
+
+                <button class="language-card"
+                        data-language="ta">
+
+                    <span class="language-symbol">அ</span>
+
+                    <span class="language-name">Tamil</span>
+
+                    <span class="language-native">
+                        தமிழ்
+                    </span>
+
+                    <span class="language-check">✓</span>
+
+                </button>
+
+            </div>
+
+
+            <div class="language-info">
+
+                <span class="info-icon">🌾</span>
+
+                <div>
+                    <strong>Designed with farmers in mind</strong>
+
+                    <p>
+                        Choose a language that makes it easier for you
+                        to navigate your water management dashboard.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <button id="continueButton" class="language-continue">
+                Continue to Dashboard →
+            </button>
+
+            <p class="language-footer">
+                AgroJal · Smart Water Management Prototype
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAIN DASHBOARD ================= -->
+
+    <section id="dashboardPage" class="page hidden">
+
+        <header class="topbar">
+
+            <div class="topbar-brand">
+
+                <div class="topbar-logo">🌱</div>
+
+                <div>
+                    <h1>AgroJal</h1>
+                    <p>Smart Water Management</p>
+                </div>
+
+            </div>
+
+
+            <div class="profile">
+
+                <div class="profile-avatar">👨‍🌾</div>
+
+                <div>
+                    <span id="welcomeMessage">Welcome!</span>
+                    <small>Farmer Dashboard</small>
+                </div>
+
+                <button id="logoutButton" class="logout-button">
+                    Logout
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <div class="layout">
+
+            <!-- SIDEBAR -->
+
+            <aside class="sidebar">
+
+                <p class="sidebar-heading">MAIN MENU</p>
+
+                <button class="nav-button active"
+                        data-section="dashboard">
+                    📊 Dashboard
+                </button>
+
+                <button class="nav-button"
+                        data-section="control">
+                    💧 Water Control
+                </button>
+
+                <button class="nav-button"
+                        data-section="usage">
+                    📈 Water Usage
+                </button>
+
+                <p class="sidebar-heading">INFORMATION</p>
+
+                <button class="nav-button"
+                        data-section="settings">
+                    ⚙️ Settings
+                </button>
+
+                <button class="nav-button"
+                        data-section="about">
+                    🌱 About AgroJal
+                </button>
+
+                <button class="nav-button"
+                        data-section="help">
+                    ❓ Help & Support
+                </button>
+
+                <div class="sidebar-note">
+                    <span>🌿</span>
+
+                    <p>
+                        Every drop matters.
+                        Manage water wisely.
+                    </p>
+                </div>
+
+            </aside>
+
+
+            <!-- MAIN CONTENT -->
+
+            <main class="main-content">
+
+                <div class="notice">
+                    <strong>Prototype Mode:</strong>
+                    The pump controls and water readings are simulated.
+                    This website is not connected to a physical pump,
+                    valve, or sensor.
+                </div>
+
+
+                <!-- DASHBOARD -->
+
+                <section id="dashboard"
+                         class="content-section">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">
+                                YOUR WATER MANAGEMENT
+                            </span>
+
+                            <h2 id="dashboardHeading">
+                                Dashboard
+                            </h2>
+
+                            <p id="dashboardGreeting">
+                                Monitor and manage your water system.
+                            </p>
+                        </div>
+
+                        <span class="date-badge" id="currentDate"></span>
+
+                    </div>
+
+
+                    <div class="cards">
+
+                        <div class="card metric-card">
+
+                            <div class="metric-top">
+                                <span>💧</span>
+                                <span class="metric-label">
+                                    WATER PUMP
+                                </span>
+                            </div>
+
+                            <h3 id="pumpStatus"
+                                class="status off">
+                                OFF
+                            </h3>
+
+                            <p>
+                                Current simulated pump status
+                            </p>
+
+                            <button id="pumpButton">
+                                Turn ON
+                            </button>
+
+                        </div>
+
+
+                        <div class="card metric-card">
+
+                            <div class="metric-top">
+                                <span>🚿</span>
+                                <span class="metric-label">
+                                    FLOW RATE
+                                </span>
+                            </div>
+
+                            <h3>
+                                <span id="flowValue">5</span>
+                                <span class="unit">L/min</span>
+                            </h3>
+
+                            <p>Adjust the water flow rate</p>
+
+                            <input
+                                type="range"
+                                id="flowSlider"
+                                min="0"
+                                max="20"
+                                value="5"
+                            >
+
+                        </div>
+
+
+                        <div class="card metric-card">
+
+                            <div class="metric-top">
+                                <span>📊</span>
+                                <span class="metric-label">
+                                    TODAY'S USAGE
+                                </span>
+                            </div>
+
+                            <h3>
+                                <span id="todayUsage">250</span>
+                                <span class="unit">Litres</span>
+                            </h3>
+
+                            <p>Illustrative daily usage</p>
+
+                        </div>
+
+
+                        <div class="card metric-card">
+
+                            <div class="metric-top">
+                                <span>🟢</span>
+                                <span class="metric-label">
+                                    SYSTEM
+                                </span>
+                            </div>
+
+                            <h3 class="status online">
+                                Demo Online
+                            </h3>
+
+                            <p>
+                                Website prototype is running
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-grid">
+
+                        <div class="panel chart-panel">
+
+                            <div class="panel-heading">
+                                <div>
+                                    <h3>Water Usage Overview</h3>
+                                    <p>
+                                        Illustrative weekly usage
+                                    </p>
+                                </div>
+
+                                <span class="panel-icon">📈</span>
+                            </div>
+
+                            <canvas id="usageChart"></canvas>
+
+                        </div>
+
+
+                        <div class="panel">
+
+                            <div class="panel-heading">
+                                <div>
+                                    <h3>Quick Actions</h3>
+                                    <p>Access common controls</p>
+                                </div>
+                            </div>
+
+                            <button class="quick-action"
+                                    data-section="control">
+                                💧 Manage Water Control
+                                <span>→</span>
+                            </button>
+
+                            <button class="quick-action"
+                                    data-section="usage">
+                                📊 View Water Usage
+                                <span>→</span>
+                            </button>
+
+                            <button class="quick-action"
+                                    data-section="help">
+                                ❓ Open Help Centre
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-heading">
+                            <div>
+                                <h3>Recent Activity</h3>
+                                <p>
+                                    Actions performed during this demo
+                                </p>
+                            </div>
+                        </div>
+
+                        <ul id="activityList">
+                            <li>AgroJal demonstration started.</li>
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+                <!-- WATER CONTROL -->
+
+                <section id="control"
+                         class="content-section hidden">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">CONTROL CENTRE</span>
+                            <h2>Water Control</h2>
+
+                            <p>
+                                Manage the simulated pump and adjust
+                                the displayed flow rate.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="control-grid">
+
+                        <div class="panel control-panel">
+
+                            <div class="large-icon">💧</div>
+
+                            <h3>Water Pump Control</h3>
+
+                            <p>
+                                Switch the demonstration pump on or off.
+                            </p>
+
+                            <div class="control-status">
+                                Pump Status:
+                                <strong id="controlStatus">OFF</strong>
+                            </div>
+
+                            <button id="controlPumpButton">
+                                Turn ON
+                            </button>
+
+                        </div>
+
+
+                        <div class="panel control-panel">
+
+                            <div class="large-icon">🚿</div>
+
+                            <h3>Flow Rate Adjustment</h3>
+
+                            <p>
+                                Adjust the simulated water flow
+                                between 0 and 20 litres per minute.
+                            </p>
+
+                            <div class="flow-display">
+                                <strong id="controlFlowValue">5</strong>
+                                <span>L/min</span>
+                            </div>
+
+                            <input
+                                type="range"
+                                id="controlFlowSlider"
+                                min="0"
+                                max="20"
+                                value="5"
+                            >
+
+                            <div class="range-labels">
+                                <span>0 L/min</span>
+                                <span>20 L/min</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="notice">
+                        <strong>Important:</strong>
+                        These controls change the website demonstration
+                        only. Real pump operation requires compatible
+                        hardware, electrical protection, and a
+                        communication system.
+                    </div>
+
+                </section>
+
+
+                <!-- WATER USAGE -->
+
+                <section id="usage"
+                         class="content-section hidden">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">WATER MONITORING</span>
+
+                            <h2>Water Usage</h2>
+
+                            <p>
+                                Review the sample water consumption
+                                displayed by the AgroJal prototype.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="cards">
+
+                        <div class="card">
+                            <div class="metric-top">
+                                <span>💧</span>
+                                <span class="metric-label">
+                                    TODAY
+                                </span>
+                            </div>
+
+                            <h3>
+                                <span id="usageToday">250</span>
+                                <span class="unit">L</span>
+                            </h3>
+
+                            <p>Illustrative daily consumption</p>
+                        </div>
+
+
+                        <div class="card">
+                            <div class="metric-top">
+                                <span>📅</span>
+                                <span class="metric-label">
+                                    THIS WEEK
+                                </span>
+                            </div>
+
+                            <h3>1,750 <span class="unit">L</span></h3>
+
+                            <p>Example weekly consumption</p>
+                        </div>
+
+
+                        <div class="card">
+                            <div class="metric-top">
+                                <span>🚿</span>
+                                <span class="metric-label">
+                                    CURRENT FLOW
+                                </span>
+                            </div>
+
+                            <h3>
+                                <span id="usageFlow">5</span>
+                                <span class="unit">L/min</span>
+                            </h3>
+
+                            <p>Selected demonstration flow rate</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <h3>Understanding Water Usage</h3>
+
+                        <p>
+                            Water usage indicates the amount of water
+                            consumed over a particular period.
+                            Monitoring consumption can help farmers
+                            understand irrigation patterns and plan
+                            water use more carefully.
+                        </p>
+
+                        <br>
+
+                        <p>
+                            In a hardware-connected version, readings
+                            could be calculated from a compatible flow
+                            sensor. The values shown here are sample
+                            figures and are not measurements from
+                            real equipment.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- SETTINGS -->
+
+                <section id="settings"
+                         class="content-section hidden">
+
+                    <div class="section-heading">
+                        <div>
+                            <span class="eyebrow">PERSONALIZATION</span>
+                            <h2>Settings</h2>
+
+                            <p>
+                                Configure your website demonstration
+                                preferences.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="panel settings-panel">
+
+                        <h3>Language Preferences</h3>
+
+                        <p>
+                            Choose the language used for supported
+                            navigation labels and greetings.
+                        </p>
+
+                        <select id="settingsLanguage">
+                            <option value="en">English</option>
+                            <option value="te">తెలుగు (Telugu)</option>
+                            <option value="hi">हिन्दी (Hindi)</option>
+                            <option value="ta">தமிழ் (Tamil)</option>
+                        </select>
+
+                        <button id="saveLanguageButton">
+                            Save Language Preference
+                        </button>
+
+                    </div>
+
+
+                    <div class="panel settings-panel">
+
+                        <h3>System Information</h3>
+
+                        <p>
+                            Current version:
+                            <strong>AgroJal Website Prototype</strong>
+                        </p>
+
+                        <p>
+                            Operating mode:
+                            <strong>Demonstration Mode</strong>
+                        </p>
+
+                        <p>
+                            Hardware connection:
+                            <strong>Not configured</strong>
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ABOUT AGROJAL -->
+
+                <section id="about"
+                         class="content-section hidden">
+
+                    <div class="about-hero">
+
+                        <div class="about-hero-text">
+
+                            <span class="eyebrow">
+                                ABOUT OUR PROJECT
+                            </span>
+
+                            <h2>Introducing AgroJal</h2>
+
+                            <p>
+                                A smart water management concept
+                                designed to make irrigation control
+                                simpler, more convenient, and more
+                                accessible for farmers.
+                            </p>
+
+                        </div>
+
+                        <div class="about-hero-icon">
+                            🌱
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel about-section">
+
+                        <h3>🌾 Our Vision</h3>
+
+                        <p>
+                            Our vision is to support smarter water
+                            management by combining irrigation
+                            equipment with easy-to-use digital
+                            technology. AgroJal aims to help users
+                            manage water flow conveniently and make
+                            more informed decisions about water use.
+                        </p>
+
+                    </div>
+
+
+                    <div class="panel about-section">
+
+                        <h3>🎯 The Problem We Want to Solve</h3>
+
+                        <p>
+                            Traditional water management may require
+                            users to operate pumps and valves manually
+                            or travel to the equipment to change
+                            settings. This can take time and make
+                            water management less convenient.
+                        </p>
+
+                        <p>
+                            Users may also find it difficult to keep
+                            track of water consumption without
+                            appropriate monitoring equipment.
+                        </p>
+
+                        <p>
+                            AgroJal explores how connected controls,
+                            flow monitoring, and a simple dashboard
+                            could help address these challenges.
+                        </p>
+
+                    </div>
+
+
+                    <div class="panel about-section">
+
+                        <h3>⚙️ How AgroJal Is Designed to Work</h3>
+
+                        <div class="process-grid">
+
+                            <div class="process-card">
+                                <span>01</span>
+                                <h4>Connect</h4>
+
+                                <p>
+                                    A compatible controller communicates
+                                    with the website or mobile app.
+                                </p>
+                            </div>
+
+                            <div class="process-card">
+                                <span>02</span>
+                                <h4>Control</h4>
+
+                                <p>
+                                    The user requests pump ON/OFF
+                                    operation or adjusts the flow
+                                    setting.
+                                </p>
+                            </div>
+
+                            <div class="process-card">
+                                <span>03</span>
+                                <h4>Monitor</h4>
+
+                                <p>
+                                    Compatible sensors can provide
+                                    water-flow measurements.
+                                </p>
+                            </div>
+
+                            <div class="process-card">
+                                <span>04</span>
+                                <h4>Improve</h4>
+
+                                <p>
+                                    Usage records can help users
+                                    understand water consumption
+                                    and plan irrigation.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel about-section">
+
+                        <h3>✨ Planned Features</h3>
+
+                        <div class="feature-list">
+
+                            <div class="feature-item">
+                                <span>💧</span>
+
+                                <div>
+                                    <h4>Remote Water Control</h4>
+
+                                    <p>
+                                        The planned hardware-connected
+                                        system would allow users to
+                                        operate a compatible pump or
+                                        valve through a digital
+                                        interface.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="feature-item">
+                                <span>🚿</span>
+
+                                <div>
+                                    <h4>Flow-Rate Management</h4>
+
+                                    <p>
+                                        With suitable flow-control
+                                        hardware, users could adjust
+                                        water delivery to match their
+                                        irrigation requirements.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="feature-item">
+                                <span>📊</span>
+
+                                <div>
+                                    <h4>Water Usage Monitoring</h4>
+
+                                    <p>
+                                        A compatible flow sensor could
+                                        provide readings to calculate
+                                        water consumption over time.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="feature-item">
+                                <span>🌐</span>
+
+                                <div>
+                                    <h4>Simple Digital Interface</h4>
+
+                                    <p>
+                                        A responsive website provides
+                                        a central place to view
+                                        information and access
+                                        supported controls.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="feature-item">
+                                <span>🗣️</span>
+
+                                <div>
+                                    <h4>Language Selection</h4>
+
+                                    <p>
+                                        Supported navigation labels
+                                        and greetings can be displayed
+                                        in the selected language.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel about-section">
+
+                        <h3>👨‍🌾 Who Can Benefit?</h3>
+
+                        <div class="benefit-grid">
+
+                            <div class="benefit-card">
+                                <h4>Farmers</h4>
+
+                                <p>
+                                    Potentially more convenient
+                                    irrigation operation and
+                                    improved visibility into
+                                    water consumption.
+                                </p>
+                            </div>
+
+                            <div class="benefit-card">
+                                <h4>Small Agricultural Holdings</h4>
+
+                                <p>
+                                    A simple interface and suitable
+                                    hardware could make water-control
+                                    technology easier to use.
+                                </p>
+                            </div>
+
+                            <div class="benefit-card">
+                                <h4>Buildings and Gardens</h4>
+
+                                <p>
+                                    The underlying concept could
+                                    potentially be adapted for
+                                    compatible tanks, pumps, and
+                                    water-distribution systems.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel about-section">
+
+                        <h3>🚀 Future Development</h3>
+
+                        <ul class="informative-list">
+
+                            <li>
+                                Integration with a compatible
+                                microcontroller and pump-control
+                                hardware.
+                            </li>
+
+                            <li>
+                                Connection to a suitable flow sensor
+                                for real water measurements.
+                            </li>
+
+                            <li>
+                                Secure communication between the
+                                hardware and the application.
+                            </li>
+
+                            <li>
+                                Water-usage history and meaningful
+                                reports based on actual sensor data.
+                            </li>
+
+                            <li>
+                                Optional alerts, scheduling, and
+                                other features after suitable
+                                testing and validation.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="about-disclaimer">
+                        <strong>Current development status</strong>
+
+                        <p>
+                            AgroJal is currently represented by a
+                            website demonstration. Pump operation,
+                            live sensor readings, automatic water
+                            saving, and hardware connectivity have
+                            not been implemented in this frontend.
+                            These capabilities require additional
+                            hardware and software integration.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- HELP AND SUPPORT -->
+
+                <section id="help"
+                         class="content-section hidden">
+
+                    <div class="section-heading">
+
+                        <div>
+                            <span class="eyebrow">SUPPORT CENTRE</span>
+
+                            <h2>Help & Support</h2>
+
+                            <p>
+                                Learn how to use the AgroJal website
+                                prototype and understand its features.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="help-banner">
+
+                        <div>
+                            <h3>Need help getting started?</h3>
+
+                            <p>
+                                Follow the instructions below to explore
+                                the dashboard and test the demonstration
+                                controls.
+                            </p>
+                        </div>
+
+                        <span>💡</span>
+
+                    </div>
+
+
+                    <div class="panel help-section">
+
+                        <h3>📘 Getting Started</h3>
+
+                        <div class="help-step">
+
+                            <span class="step-number">1</span>
+
+                            <div>
+                                <h4>Log in</h4>
+
+                                <p>
+                                    Enter a name and a password
+                                    containing at least four characters.
+                                    This prototype accepts demonstration
+                                    credentials and does not verify
+                                    an actual account.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="help-step">
+
+                            <span class="step-number">2</span>
+
+                            <div>
+                                <h4>Select your language</h4>
+
+                                <p>
+                                    Choose English, Telugu, Hindi,
+                                    or Tamil from the language cards.
+                                    Click Continue to open the dashboard.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="help-step">
+
+                            <span class="step-number">3</span>
+
+                            <div>
+                                <h4>Explore the dashboard</h4>
+
+                                <p>
+                                    Review the displayed pump status,
+                                    flow rate, sample water usage,
+                                    chart, and recent activity.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="help-step">
+
+                            <span class="step-number">4</span>
+
+                            <div>
+                                <h4>Test the water controls</h4>
+
+                                <p>
+                                    Open Water Control and use the
+                                    button to simulate turning the
+                                    pump ON or OFF. Move the slider
+                                    to change the displayed flow rate.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="help-step">
+
+                            <span class="step-number">5</span>
+
+                            <div>
+                                <h4>Review usage and settings</h4>
+
+                                <p>
+                                    Visit Water Usage to review the
+                                    example readings. Use Settings
+                                    to change the supported navigation
+                                    language.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel help-section">
+
+                        <h3>❓ Frequently Asked Questions</h3>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Does AgroJal control a real water pump?
+                            </summary>
+
+                            <p>
+                                No. The current version is a website
+                                prototype. The pump button only changes
+                                the displayed demonstration status.
+                                Physical control requires compatible
+                                hardware, a suitable driver or relay,
+                                a communication method, and safety
+                                measures.
+                            </p>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Are the water-usage values real?
+                            </summary>
+
+                            <p>
+                                No. The displayed readings and chart
+                                use sample data. Real measurements
+                                would require a compatible flow sensor,
+                                a controller, and software to process
+                                and transmit the readings.
+                            </p>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Why does the flow-rate slider not change
+                                the actual water flow?
+                            </summary>
+
+                            <p>
+                                The slider currently updates only the
+                                number displayed on the website.
+                                A real system would need suitable
+                                flow-control hardware, such as a
+                                compatible motorized valve or pump
+                                controller, along with appropriate
+                                feedback and safety checks.
+                            </p>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Does the website support multiple languages?
+                            </summary>
+
+                            <p>
+                                The prototype includes English,
+                                Telugu, Hindi, and Tamil options.
+                                Supported navigation labels and
+                                greetings change with the selection.
+                                Not all page content has been
+                                translated yet.
+                            </p>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Why is the chart not appearing?
+                            </summary>
+
+                            <p>
+                                The chart library loads from an
+                                external service. Check your internet
+                                connection and reload the website.
+                                The rest of the website can still
+                                display without the chart library.
+                            </p>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Is the login connected to a database?
+                            </summary>
+
+                            <p>
+                                No. Login is for demonstration only.
+                                The website does not currently
+                                authenticate users against a database.
+                                A real application would require
+                                secure authentication and appropriate
+                                protection for user information.
+                            </p>
+
+                        </details>
+
+
+                        <details class="faq-item">
+
+                            <summary>
+                                Can I use AgroJal on a mobile phone?
+                            </summary>
+
+                            <p>
+                                Yes. The website layout is responsive
+                                and is designed to adapt to smaller
+                                screens. Some features, such as
+                                charts, may appear differently
+                                depending on the device.
+                            </p>
+
+                        </details>
+
+                    </div>
+
+
+                    <div class="panel help-section">
+
+                        <h3>🛠️ Troubleshooting</h3>
+
+                        <div class="troubleshooting-item">
+
+                            <strong>Problem: The Continue button does
+                                not work.</strong>
+
+                            <p>
+                                Check that you have entered a name
+                                and a password containing at least
+                                four characters.
+                            </p>
+
+                        </div>
+
+
+                        <div class="troubleshooting-item">
+
+                            <strong>Problem: The language does not
+                                change.</strong>
+
+                            <p>
+                                Return to Settings, select the
+                                required language, and click
+                                Save Language Preference.
+                            </p>
+
+                        </div>
+
+
+                        <div class="troubleshooting-item">
+
+                            <strong>Problem: The pump status does
+                                not represent the physical pump.</strong>
+
+                            <p>
+                                This is expected in demonstration
+                                mode. The current website has no
+                                physical hardware connection.
+                            </p>
+
+                        </div>
+
+
+                        <div class="troubleshooting-item">
+
+                            <strong>Problem: The website design looks
+                                incorrect.</strong>
+
+                            <p>
+                                Confirm that index.html, style.css,
+                                and script.js are saved in the same
+                                folder. Refresh the browser after
+                                saving your changes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="support-card">
+
+                        <span class="support-icon">🌱</span>
+
+                        <h3>AgroJal Support</h3>
+
+                        <p>
+                            This prototype is intended for project
+                            demonstration and development. Hardware
+                            installation and real water-control
+                            functionality will require further
+                            engineering and testing.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+
+        <footer>
+            <p>
+                © 2026 AgroJal |
+                Smart Water Management Prototype
+            </p>
+        </footer>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
